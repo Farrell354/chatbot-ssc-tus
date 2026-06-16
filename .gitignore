@@ -1,0 +1,22 @@
+node_modules/
+venv/
+__pycache__/
+.env
+.wwebjs_auth/
+.cache/
+db/
+*.pyc
+
+# Rahasia dan Cache Python
+.env
+__pycache__/
+*.pyc
+
+# Database AI
+db/
+dataset/
+
+# Cache dan Library Node.js (Bot WA)
+.wwebjs_auth/
+.wwebjs_cache/
+node_modules/
