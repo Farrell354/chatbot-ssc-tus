@@ -26,7 +26,7 @@ client.on('message', async (msg) => {
     try {
         console.log('Pesan masuk:', msg.body);
         // Mengirim pesan ke backend FastAPI kita
-        const response = await axios.post('http://127.0.0.1:8000/tanya', {
+        const response = await axios.post('hhttps://incogitant-lisandra-unorganically.ngrok-free.dev/tanya', {
             pertanyaan: msg.body
         });
 
