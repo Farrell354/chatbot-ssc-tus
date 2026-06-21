@@ -154,7 +154,9 @@
             statusMessage.className = "mt-4 text-center text-sm font-semibold text-blue-700 bg-blue-50 border border-blue-200 block p-3 rounded-lg";
 
             try {
-                const response = await fetch(`${API_URL}/upload`, { method: "POST", body: formData });
+                const response = await fetch(`${API_URL}/upload`, { method: "POST", body: formData, headers: { "ngrok-skip-browser-warning": "true" } 
+            });
+                
                 if (response.ok) {
                     statusMessage.innerHTML = "<i class='fas fa-check-circle mr-1'></i> Berhasil diupdate!";
                     statusMessage.className = "mt-4 text-center text-sm font-semibold text-green-700 bg-green-50 border border-green-200 block p-3 rounded-lg";
@@ -181,7 +183,7 @@
 
             try {
                 // Contoh: Hit endpoint health check FastAPI
-                const res = await fetch(`${API_URL}/health`);
+                const res = await fetch(`${API_URL}/health`, {headers: { "ngrok-skip-browser-warning": "true" }});
                 setStatus('status-backend', res.ok);
                 setStatus('status-db', res.ok); // Asumsi jika backend nyala, DB nyala
             } catch {
@@ -195,7 +197,7 @@
         // 3. Logika Mengambil Daftar Dokumen Asli dari Backend
         async function fetchDocuments() {
             try {
-                const res = await fetch(`${API_URL}/documents`);
+                const res = await fetch(`${API_URL}/documents`,{headers: { "ngrok-skip-browser-warning": "true" }});
                 const data = await res.json();
 
                 const tbody = document.getElementById('documentList');
@@ -252,7 +254,8 @@
 
             try {
                 const res = await fetch(`${API_URL}/documents/${filename}`, {
-                    method: 'DELETE'
+                    method: 'DELETE',
+                    headers: { "ngrok-skip-browser-warning": "true" }
                 });
                 const result = await res.json();
 
